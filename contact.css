@@ -1,0 +1,140 @@
+.contact-interaction {
+    padding: 100px 0;
+    background-color: var(--bg-main);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* --- Left Side: Info & Map --- */
+.info-label {
+    display: block;
+    color: var(--accent-callout); /* Your Red #e53935 */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.info-group {
+    margin-bottom: 40px;
+}
+
+.info-group h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.info-group h3 span {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.map-placeholder {
+    position: relative;
+    height: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.map-placeholder:hover {
+    filter: grayscale(0%);
+}
+
+.map-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-callout);
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.5);
+    animation: pulseRed 2s infinite;
+}
+
+/* --- Right Side: Form --- */
+.align-left { text-align: left; margin-bottom: 40px; }
+
+.premium-contact-form .input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-field {
+    margin-bottom: 25px;
+}
+
+.input-field label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.input-field input, 
+.input-field select, 
+.input-field textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-thin);
+    background: #f9f9f9;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.input-field input:focus, 
+.input-field textarea:focus {
+    outline: none;
+    border-color: var(--accent-callout);
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(229, 57, 53, 0.05);
+}
+
+.btn-full {
+    width: 100%;
+    padding: 20px !important;
+}
+
+/* --- 768px Responsive Logic --- */
+@media (max-width: 992px) {
+    .contact-wrapper { gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .contact-interaction { padding: 60px 0; }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Stack layout */
+    }
+
+    .contact-info-panel {
+        order: 2; /* Move map/info below form on mobile */
+        text-align: center;
+    }
+
+    .premium-contact-form .input-row {
+        grid-template-columns: 1fr;
+    }
+
+    .map-placeholder {
+        height: 250px;
+    }
+}

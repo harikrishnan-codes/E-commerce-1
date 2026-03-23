@@ -1,0 +1,1182 @@
+/* --- Section Header Styles --- */
+.section-header {
+    text-align: center;
+    /* Centers the text for a balanced landing page */
+    max-width: 700px;
+    /* Prevents the subtitle from spanning the whole screen */
+    margin: 0 auto 3.5rem auto;
+    /* Centers the block and adds space before the grid */
+    padding: 0 1rem;
+    /* Prevents text from touching edges on mobile */
+}
+
+.section-title {
+    color: var(--text-main);
+    /* Your fixed #1a1a1a */
+    font-size: var(--fs-h2);
+    /* Your fixed 2rem */
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Standard for E-commerce headers */
+    letter-spacing: 0.05em;
+    /* Adds a "premium" feel */
+    margin-bottom: 0.75rem;
+    /* Space between title and subtitle */
+    position: relative;
+    display: inline-block;
+}
+
+/* Optional: Subtle decorative line under the title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-callout);
+    /* Your fixed #e53935 red */
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    /* Your fixed #6b6b6b */
+    font-size: var(--fs-p);
+    /* Your fixed 1rem */
+    line-height: var(--lh-body);
+    font-weight: 400;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        /* Slightly smaller for mobile screens */
+    }
+}
+
+
+
+
+
+
+
+
+.promotional-offers {
+    padding: 80px 0;
+    background-color: var(--bg-main);
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* Asymmetric grid for visual interest */
+    grid-template-rows: auto auto;
+    gap: 30px;
+}
+
+.offer-card {
+    background: #fff;
+    border: 1px solid var(--border-thin);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.featured-offer {
+    grid-row: span 2;
+    background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%);
+    display: flex;
+    align-items: center;
+}
+
+/* --- Offer Tags --- */
+.offer-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--accent-callout);
+    /* Your Red #e53935 */
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.black-tag {
+    background: var(--bg-dark);
+}
+
+/* --- The Discount Circle Animation --- */
+.discount-circle {
+    width: 120px;
+    height: 120px;
+    background: var(--accent-callout);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
+    animation: floatGlow 3s ease-in-out infinite;
+}
+
+.small-circle {
+    width: 70px;
+    height: 70px;
+}
+
+@keyframes floatGlow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(229, 57, 53, 0.5);
+    }
+}
+
+.discount-circle .pct {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.discount-circle .off {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.small-circle .pct {
+    font-size: 1.2rem;
+}
+
+/* --- Typography --- */
+.offer-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.offer-details p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.timer {
+    color: var(--accent-callout);
+    font-weight: 700;
+    font-family: monospace;
+}
+
+.btn-text-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-text-link:hover {
+    color: var(--accent-callout);
+    padding-left: 10px;
+}
+
+/* --- 768px Media Query --- */
+@media (max-width: 992px) {
+    .offer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-offer {
+        grid-row: span 1;
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .promotional-offers {
+        padding: 40px 0;
+    }
+
+    .offer-grid {
+        grid-template-columns: 1fr;
+        /* Stacked list */
+        gap: 20px;
+    }
+
+    .offer-card {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .discount-circle {
+        margin: 0 auto 20px;
+    }
+
+    .offer-tag {
+        position: static;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .offer-details h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+.discount-categories {
+    padding: 100px 0;
+    background-color: var(--bg-main);
+}
+
+.discount-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.discount-card {
+    position: relative;
+    height: 450px;
+    background: #f4f4f4;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+/* --- The Morphing Background --- */
+.card-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--accent-callout);
+    /* Your Red #e53935 */
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+}
+
+.discount-card:hover .card-bg-overlay {
+    transform: translateY(0);
+}
+
+/* --- Content Styling --- */
+.discount-info {
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s ease;
+}
+
+.save-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.percent {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+.discount-card:hover .discount-info {
+    color: #fff;
+}
+
+/* --- Floating Image --- */
+.discount-img {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 200px;
+    height: 250px;
+    z-index: 2;
+    transition: transform 0.6s ease;
+}
+
+.discount-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.discount-card:hover .discount-img {
+    transform: translateY(-20px) scale(1.1);
+}
+
+/* --- The Round Action Button --- */
+.btn-round-link {
+    position: relative;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--text-main);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.discount-card:hover .btn-round-link {
+    background: #fff;
+    color: var(--accent-callout);
+    transform: rotate(90deg);
+}
+
+/* --- 768px Responsive Logic --- */
+@media (max-width: 992px) {
+    .discount-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .discount-wrapper {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 20px;
+        scrollbar-width: none;
+    }
+
+    .discount-card {
+        flex: 0 0 280px;
+        height: 400px;
+    }
+
+    .percent {
+        font-size: 3rem;
+    }
+
+    /* Auto-show colors on mobile since hover is rare */
+    .card-bg-overlay {
+        transform: translateY(0);
+        opacity: 0.05;
+    }
+
+    .discount-card:active .card-bg-overlay {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+.flash-deals-section {
+    padding: 60px 0;
+    background-color: var(--bg-main);
+}
+
+.deal-banner {
+    background: var(--bg-dark);
+    /* Your #1a1a1a */
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    overflow: hidden;
+    border: 1px solid rgba(229, 57, 53, 0.3);
+    /* Subtle Red Border */
+}
+
+/* --- Left Side: Header & Timer --- */
+.deal-header {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(229, 57, 53, 0.1) 0%, transparent 100%);
+}
+
+.live-indicator {
+    color: var(--accent-callout);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.live-indicator .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-callout);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-callout);
+    animation: pulseRed 1.5s infinite;
+}
+
+.deal-title {
+    font-size: 2.5rem;
+    color: #fff !important;
+    margin-bottom: 30px;
+}
+
+.deal-title span {
+    font-style: italic;
+    color: var(--accent-callout);
+}
+
+.global-countdown {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+}
+
+.time-unit span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.time-unit small {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* --- Right Side: Product Grid --- */
+.deal-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.deal-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.deal-item:hover {
+    transform: translateY(-10px);
+}
+
+.deal-img {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    margin-bottom: 15px;
+}
+
+.deal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.save-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-callout);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 8px;
+}
+
+.deal-pricing .old {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-right: 10px;
+}
+
+.deal-pricing .new {
+    color: var(--accent-callout);
+    font-weight: 800;
+}
+
+/* --- 768px Responsive Logic --- */
+@media (max-width: 992px) {
+    .deal-banner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .deal-header {
+        padding: 40px 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .deal-items-grid {
+        grid-template-columns: 1fr;
+        /* Single column stack */
+        padding: 20px;
+    }
+
+    .deal-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.tiered-rewards-section {
+    padding: 100px 0;
+    background-color: var(--bg-main);
+    border-top: 1px solid var(--border-thin);
+}
+
+.rewards-tracker-wrapper {
+    padding: 60px 0 100px;
+    position: relative;
+}
+
+/* --- The Progress Bar --- */
+.progress-track {
+    position: relative;
+    height: 4px;
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 45%;
+    /* This would be dynamic based on cart value */
+    background: var(--accent-callout);
+    /* Your Red #e53935 */
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.4);
+    transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* --- Reward Steps --- */
+.reward-step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.step-dot {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 3px solid #eee;
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: all 0.4s ease;
+}
+
+.step-content {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+}
+
+.step-content h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* --- Active & Reached States --- */
+.reward-step.reached .step-dot {
+    background: var(--accent-callout);
+    border-color: var(--accent-callout);
+}
+
+.reward-step.active-next .step-dot {
+    border-color: var(--accent-callout);
+    animation: pulseStep 2s infinite;
+}
+
+@keyframes pulseStep {
+    0% {
+        box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(229, 57, 53, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(229, 57, 53, 0);
+    }
+}
+
+.rewards-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: var(--border-radius);
+}
+
+/* --- 768px Responsive Logic --- */
+@media (max-width: 768px) {
+    .progress-track {
+        flex-direction: column;
+        height: 400px;
+        width: 4px;
+        margin: 0 auto;
+    }
+
+    .progress-fill {
+        width: 100%;
+        height: 45%;
+        top: 0;
+    }
+
+    .step-content {
+        position: relative;
+        top: 0;
+        left: 60px;
+        transform: none;
+        text-align: left;
+    }
+
+    .reward-step {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+.service-guarantees {
+    padding: 80px 0;
+    background-color: var(--bg-main);
+    border-top: 1px solid var(--border-thin);
+}
+
+.guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.guarantee-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-thin);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* --- The Red Glow Animation --- */
+.guarantee-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(229, 57, 53, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.guarantee-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-callout);
+    /* Your Red #e53935 */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.guarantee-card:hover::before {
+    opacity: 1;
+}
+
+/* --- Icon & Text --- */
+.g-icon {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.g-info h4 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.g-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- 768px Media Query --- */
+@media (max-width: 992px) {
+    .guarantee-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-guarantees {
+        padding: 60px 0;
+    }
+
+    .guarantee-card {
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .g-icon {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .g-info h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.final-offer-call {
+    padding: 100px 0;
+    background-color: var(--bg-main);
+}
+
+.final-banner-wrapper {
+    position: relative;
+    background-color: var(--bg-dark);
+    /* Your #1a1a1a */
+    border-radius: var(--border-radius);
+    padding: 80px 60px;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* --- Decorative Watermark --- */
+.final-watermark {
+    position: absolute;
+    right: -20px;
+    bottom: -40px;
+    font-size: 15rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    line-height: 1;
+}
+
+.final-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* --- Typography --- */
+.final-label {
+    display: block;
+    color: var(--accent-callout);
+    /* Your Red #e53935 */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.final-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #fff !important;
+}
+
+.final-title span {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.final-description {
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 450px;
+    font-size: 1.1rem;
+}
+
+/* --- Action Side: Timer & Button --- */
+.final-action-side {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mini-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.t-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.t-block span {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent-callout);
+}
+
+.t-block small {
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    opacity: 0.5;
+}
+
+.btn-large-final {
+    width: 100%;
+    padding: 20px !important;
+    background-color: #fff !important;
+    color: var(--text-main) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 20px;
+}
+
+.btn-large-final:hover {
+    background-color: var(--accent-callout) !important;
+    color: #fff !important;
+}
+
+.final-security {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- 768px Media Query --- */
+@media (max-width: 992px) {
+    .final-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .final-banner-wrapper {
+        padding: 60px 25px;
+        border-radius: 0;
+        /* Full bleed on mobile */
+    }
+
+    .final-title {
+        font-size: 2.2rem;
+    }
+
+    .final-action-side {
+        padding: 30px 15px;
+    }
+
+    .final-watermark {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+.offer-faq-section {
+    padding: 80px 0 120px;
+    background-color: var(--bg-main);
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-thin);
+    transition: var(--transition);
+}
+
+/* --- The Question Toggle --- */
+.faq-question {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--accent-callout);
+    /* Your Red #e53935 */
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- The Answer Reveal --- */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-answer p {
+    padding-bottom: 30px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* --- Active State Logic --- */
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    /* Large enough for content */
+    transition: max-height 1s ease-in-out;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: var(--accent-callout);
+}
+
+.faq-item.active .faq-question {
+    color: var(--accent-callout);
+}
+
+/* --- 768px Media Query --- */
+@media (max-width: 768px) {
+    .offer-faq-section {
+        padding: 60px 0 80px;
+    }
+
+    .faq-question {
+        padding: 20px 0;
+        font-size: 1rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+        padding-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+.mystery-offer-section {
+    padding: 80px 0;
+    background-color: var(--bg-main);
+}
+
+.mystery-card {
+    background: var(--bg-dark);
+    /* Your #1a1a1a */
+    border-radius: var(--border-radius);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- The Shimmer Animation --- */
+.shimmer-effect {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(229, 57, 53, 0.1) 50%,
+            transparent 100%);
+    transform: skewX(-25deg);
+    animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+.mystery-title {
+    font-size: 3rem;
+    color: #fff !important;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.mystery-title span {
+    color: var(--accent-callout);
+    font-style: italic;
+}
+
+.mystery-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* --- Reveal Logic --- */
+.reveal-box {
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.promo-result {
+    display: none;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s ease;
+}
+
+/* When the class 'unlocked' is added via JS */
+.unlocked.reveal-box {
+    display: none;
+}
+
+.unlocked~.promo-result {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.promo-code {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--accent-callout);
+    border: 2px dashed rgba(229, 57, 53, 0.4);
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 20px 0;
+    background: rgba(229, 57, 53, 0.05);
+}
+
+.promo-label {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+}
+
+/* --- 768px Media Query --- */
+@media (max-width: 768px) {
+    .mystery-card {
+        padding: 60px 20px;
+    }
+
+    .mystery-title {
+        font-size: 2rem;
+    }
+
+    .promo-code {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+}
