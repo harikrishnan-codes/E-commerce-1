@@ -11,5 +11,4 @@ function showSlide() {
     }
 }
 
-// Auto change every 3 seconds
-setInterval(showSlide, 3000);
+ setInterval(showSlide, 3000);

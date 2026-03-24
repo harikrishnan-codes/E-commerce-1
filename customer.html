@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+
+    <link rel="stylesheet" href="customer.css">
+    <link rel="stylesheet" href="root.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside>
+            <div class="aside-brand">
+                <div class="brand-inner">
+                    <h3>User<span>Core</span></h3>
+                    <div class="system-tag">v1.0</div>
+                </div>
+            </div>
+
+            <nav class="aside-nav">
+                <ul>
+                    <li>
+                        <a href="#" data-target="dashboard-view">
+                            <i class="material-icons">dashboard</i> Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-target="orders-view">
+                            <i class="material-icons">shopping_cart</i> My Orders
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-target="wishlist-view">
+                            <i class="material-icons">favorite</i> Wishlist
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-target="profile-view">
+                            <i class="material-icons">person</i> Profile
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- <button onclick="logout()">Logout</button> -->
+            </nav>
+        </aside>
+
+        <!-- MAIN -->
+        <main>
+
+            <!-- MOBILE TOP BAR -->
+            <div class="mobile-top-bar">
+                <h3 class="mobile-brand">User<span>Core</span></h3>
+                <button class="menu-btn" id="menu-toggle">
+                    <i class="material-icons">menu</i>
+                </button>
+            </div>
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+
+                <div class="topbar-left">
+                    <h3>Customer Dashboard</h3>
+                </div>
+
+                <div class="topbar-center">
+                    <div class="search-box">
+                        <i class="material-icons">search</i>
+                        <input type="text" placeholder="Search orders..." />
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="topbar-icon">
+                        <i class="material-icons">notifications</i>
+                        <span class="badge">2</span>
+                    </div>
+
+                    <div class="profile-box">
+                        <div class="profile-img" id="profile-letter">U</div>
+                        <div class="profile-info">
+                            <p id="profile-name">User</p>
+                            <span>Customer</span>
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="topbar-icon">Logout</a>
+
+                </div>
+            </div>
+
+            <!-- SECTIONS -->
+
+            <section id="dashboard-view" class="main-content">
+                <div class="dash-header">
+                    <div class="dash-title">
+                        <h1>Welcome back, <span id="user-display-name">Customer</span> 👋</h1>
+                        <p>Here’s what’s happening with your account today.</p>
+                    </div>
+                    <div class="dash-date">
+                        <i class="material-icons">calendar_today</i>
+                        <span>March 24, 2026</span>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon red-bg">
+                            <i class="material-icons">shopping_bag</i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon black-bg">
+                            <i class="material-icons">favorite</i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>05</h3>
+                            <p>Wishlist Items</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon outline">
+                            <i class="material-icons">account_balance_wallet</i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>$1,240</h3>
+                            <p>Total Spent</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="orders-view" class="main-content">
+                <div class="section-header-flex">
+                    <div class="title-group">
+                        <h1>My <span>Orders</span></h1>
+                        <p>Track, manage, and view your purchase history.</p>
+                    </div>
+                    <div class="order-actions">
+                        <button class="btn-outline"><i class="material-icons">download</i> Export PDF</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="premium-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Product</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-8821</td>
+                                <td class="product-cell">
+                                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=100"
+                                        alt="Prod">
+                                    <span>Premium Sneakers</span>
+                                </td>
+                                <td>Mar 20, 2026</td>
+                                <td class="price-cell">$120.00</td>
+                                <td><span class="status-badge delivered">Delivered</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7742</td>
+                                <td class="product-cell">
+                                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=100"
+                                        alt="Prod">
+                                    <span>Minimalist Watch</span>
+                                </td>
+                                <td>Mar 22, 2026</td>
+                                <td class="price-cell">$340.00</td>
+                                <td><span class="status-badge pending">Processing</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-6610</td>
+                                <td class="product-cell">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=100"
+                                        alt="Prod">
+                                    <span>Wireless Headset</span>
+                                </td>
+                                <td>Mar 24, 2026</td>
+                                <td class="price-cell">$89.00</td>
+                                <td><span class="status-badge canceled">Canceled</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+
+
+
+            <section id="wishlist-view" class="main-content">
+                <div class="section-header-flex">
+                    <div class="title-group">
+                        <h1>My <span>Wishlist</span></h1>
+                        <p>You have 05 items saved in your collection.</p>
+                    </div>
+                    <div class="wishlist-actions">
+                        <button class="btn-black">Add All to Cart</button>
+                    </div>
+                </div>
+
+                <div class="wishlist-grid">
+                    <div class="wishlist-item">
+                        <div class="wish-img-container">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400"
+                                alt="Product">
+                            <button class="remove-wish" title="Remove from Wishlist">
+                                <i class="material-icons">close</i>
+                            </button>
+                            <span class="stock-tag">In Stock</span>
+                        </div>
+                        <div class="wish-details">
+                            <div class="wish-info">
+                                <h4>Minimalist Gold Watch</h4>
+                                <p class="wish-price">$340.00</p>
+                            </div>
+                            <button class="add-cart-btn">
+                                <i class="material-icons">shopping_cart</i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <div class="wish-img-container">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400"
+                                alt="Product">
+                            <button class="remove-wish">
+                                <i class="material-icons">close</i>
+                            </button>
+                            <span class="stock-tag">In Stock</span>
+                        </div>
+                        <div class="wish-details">
+                            <div class="wish-info">
+                                <h4>Athletic Red Sneakers</h4>
+                                <p class="wish-price">$120.00</p>
+                            </div>
+                            <button class="add-cart-btn">
+                                <i class="material-icons">shopping_cart</i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <div class="wish-img-container">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400"
+                                alt="Product">
+                            <button class="remove-wish">
+                                <i class="material-icons">close</i>
+                            </button>
+                            <span class="stock-tag out-of-stock">Out of Stock</span>
+                        </div>
+                        <div class="wish-details">
+                            <div class="wish-info">
+                                <h4>Wireless Studio Pro</h4>
+                                <p class="wish-price">$199.00</p>
+                            </div>
+                            <button class="add-cart-btn disabled" disabled>
+                                Notify Me
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="profile-view" class="main-content">
+                <div class="section-header-flex">
+                    <div class="title-group">
+                        <h1>My <span>Profile</span></h1>
+                        <p>Manage your personal information and security settings.</p>
+                    </div>
+                </div>
+
+                <div class="profile-container">
+                    <div class="profile-aside">
+                        <div class="avatar-upload">
+                            <div class="avatar-preview">
+                                <span id="large-profile-letter">U</span>
+                            </div>
+                            <button class="edit-avatar-btn">
+                                <i class="material-icons">photo_camera</i>
+                            </button>
+                        </div>
+                        <div class="user-meta">
+                            <h2 id="display-full-name">User Name</h2>
+                            <p>Member since 2026</p>
+                        </div>
+                        <div class="account-badges">
+                            <span class="badge-item"><i class="material-icons">verified</i> Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-main">
+                        <form class="premium-form">
+                            <div class="form-grid">
+                                <div class="input-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Enter your name" value="User Name">
+                                </div>
+                                <div class="input-group">
+                                    <label>Email Address</label>
+                                    <input type="email" id="edit-email" readonly placeholder="user@example.com">
+                                    <small>Email cannot be changed manually.</small>
+                                </div>
+                                <div class="input-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" placeholder="+1 234 567 890">
+                                </div>
+                                <div class="input-group">
+                                    <label>Location</label>
+                                    <input type="text" placeholder="New York, USA">
+                                </div>
+                            </div>
+
+                            <div class="form-divider"></div>
+
+                            <div class="password-section">
+                                <h3>Security</h3>
+                                <div class="input-group">
+                                    <label>Current Password</label>
+                                    <input type="password" placeholder="••••••••">
+                                </div>
+                                <div class="form-grid">
+                                    <div class="input-group">
+                                        <label>New Password</label>
+                                        <input type="password" placeholder="Min. 8 characters">
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Confirm Password</label>
+                                        <input type="password" placeholder="Repeat password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-black">Discard</button>
+                                <button type="submit" class="btn-red">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+    const navLinks = document.querySelectorAll('.aside-nav a');
+    const sections = document.querySelectorAll('.main-content');
+    const aside = document.querySelector('aside');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // 1. Create & Append Overlay for Mobile
+    const overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    document.body.appendChild(overlay);
+
+    // 2. Mobile Sidebar Toggle Logic
+    menuToggle.addEventListener('click', () => {
+        aside.classList.add('mobile-active');
+        overlay.classList.add('visible');
+    });
+
+    overlay.addEventListener('click', () => {
+        aside.classList.remove('mobile-active');
+        overlay.classList.remove('visible');
+    });
+
+    // 3. Navigation Logic (The "Switch" Trigger)
+    navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            // A. Update Content Classes
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+                // We do NOT set section.style.display here
+            });
+            targetSection.classList.add('active-section');
+
+            // B. Update Sidebar Classes
+            navLinks.forEach(nav => nav.parentElement.classList.remove('active'));
+            this.parentElement.classList.add('active');
+
+            // C. Handle Mobile
+            if (window.innerWidth <= 992) {
+                aside.classList.remove('mobile-active');
+                overlay.classList.remove('visible');
+            }
+        }
+    });
+});
+
+    // 4. Persistence: Load User Data from LocalStorage
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (user) {
+        // Update Topbar Profile Name
+        const profileName = document.getElementById("profile-name");
+        if(profileName) profileName.textContent = user.email;
+
+        // Update Dashboard Welcome Name
+        const welcomeName = document.getElementById("user-display-name");
+        if(welcomeName) welcomeName.textContent = user.email.split('@')[0]; // Shows name before @
+
+        // Update Profile Letter (U -> First Letter of Email)
+        const profileLetter = document.getElementById("profile-letter");
+        const largeLetter = document.getElementById("large-profile-letter");
+        
+        const firstLetter = user.email.charAt(0).toUpperCase();
+        if(profileLetter) profileLetter.textContent = firstLetter;
+        if(largeLetter) largeLetter.textContent = firstLetter;
+    }
+
+});
+
+/**
+ * Global Logout Function
+ * Clears session and redirects to index
+ */
+function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+}
+
+
+
+    </script>
+
+</body>
+
+</html>

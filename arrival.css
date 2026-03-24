@@ -1,63 +1,47 @@
-/* --- Section Header Styles --- */
-.section-header {
-    text-align: center;
-    /* Centers the text for a balanced landing page */
-    max-width: 700px;
-    /* Prevents the subtitle from spanning the whole screen */
-    margin: 0 auto 3.5rem auto;
-    /* Centers the block and adds space before the grid */
-    padding: 0 1rem;
-    /* Prevents text from touching edges on mobile */
-}
+ .section-header {
+     text-align: center;
+     max-width: 700px;
+     margin: 0 auto 3.5rem auto;
+     padding: 0 1rem;
+ }
 
-.section-title {
-    color: var(--text-main);
-    /* Your fixed #1a1a1a */
-    font-size: var(--fs-h2);
-    /* Your fixed 2rem */
-    font-weight: 700;
-    text-transform: uppercase;
-    /* Standard for E-commerce headers */
-    letter-spacing: 0.05em;
-    /* Adds a "premium" feel */
-    margin-bottom: 0.75rem;
-    /* Space between title and subtitle */
-    position: relative;
-    display: inline-block;
-}
+ .section-title {
+     color: var(--text-main);
+     font-size: var(--fs-h2);
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+     margin-bottom: 0.75rem;
+     position: relative;
+     display: inline-block;
+ }
 
-/* Optional: Subtle decorative line under the title */
-.section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent-callout);
-    /* Your fixed #e53935 red */
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
-}
+ .section-title::after {
+     content: '';
+     display: block;
+     width: 50px;
+     height: 3px;
+     background-color: var(--accent-callout);
+     margin: 0.5rem auto 0;
+     border-radius: 2px;
+ }
 
-.section-subtitle {
-    color: var(--text-muted);
-    /* Your fixed #6b6b6b */
-    font-size: var(--fs-p);
-    /* Your fixed 1rem */
-    line-height: var(--lh-body);
-    font-weight: 400;
-}
+ .section-subtitle {
+     color: var(--text-muted);
+     font-size: var(--fs-p);
+     line-height: var(--lh-body);
+     font-weight: 400;
+ }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .section-header {
-        margin-bottom: 2.5rem;
-    }
+ @media (max-width: 768px) {
+     .section-header {
+         margin-bottom: 2.5rem;
+     }
 
-    .section-title {
-        font-size: 1.75rem;
-        /* Slightly smaller for mobile screens */
-    }
-}
+     .section-title {
+         font-size: 1.75rem;
+     }
+ }
 
 
 
@@ -78,24 +62,20 @@
     margin-top: 40px;
 }
 
-/* --- Horizontal Scroll Wrapper --- */
-.trending-scroll-wrapper {
+ .trending-scroll-wrapper {
     display: flex;
     gap: 30px;
     overflow-x: auto;
     padding-bottom: 40px;
     scrollbar-width: none;
-    /* Hide scrollbar Firefox */
-    scroll-snap-type: x mandatory;
+     scroll-snap-type: x mandatory;
 }
 
 .trending-scroll-wrapper::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar Chrome/Safari */
-}
+ }
 
-/* --- The Trending Item --- */
-.trending-item {
+ .trending-item {
     flex: 0 0 300px;
     scroll-snap-align: start;
     transition: var(--transition);
@@ -121,14 +101,12 @@
     transform: scale(1.1);
 }
 
-/* --- Red Accent Badge --- */
-.t-badge {
+ .t-badge {
     position: absolute;
     top: 15px;
     right: 15px;
     background-color: var(--accent-callout);
-    /* Red #e53935 */
-    color: #fff;
+     color: #fff;
     padding: 4px 12px;
     font-size: 0.65rem;
     font-weight: 800;
@@ -146,8 +124,7 @@
     font-weight: 600;
 }
 
-/* --- Scroll Progress Bar --- */
-.scroll-track {
+ .scroll-track {
     width: 100%;
     height: 2px;
     background: var(--border-thin);
@@ -157,8 +134,7 @@
 
 .scroll-bar {
     width: 25%;
-    /* Represents the visible portion */
-    height: 100%;
+     height: 100%;
     background: var(--accent-callout);
     position: absolute;
     top: 0;
@@ -166,12 +142,10 @@
     transition: all 0.3s ease;
 }
 
-/* --- 768px Responsive Logic --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .trending-item {
         flex: 0 0 240px;
-        /* Smaller cards for mobile */
-    }
+     }
 
     .trending-showcase-section {
         padding: 60px 0;
@@ -179,8 +153,7 @@
 
     .scroll-track {
         display: none;
-        /* Mobile users use natural thumb scrolling */
-    }
+     }
 }
 
 
@@ -203,8 +176,7 @@
     display: flex;
 }
 
-/* --- The Infinite Animation --- */
-.marquee-content {
+ .marquee-content {
     display: flex;
     gap: 80px;
     animation: scrollMarquee 30s linear infinite;
@@ -234,12 +206,10 @@
 .logo-item:hover {
     opacity: 1;
     color: var(--accent-callout);
-    /* Your Red #e53935 */
-    transform: scale(1.1);
+     transform: scale(1.1);
 }
 
-/* --- Edge Fades --- */
-.marquee-fade-left,
+ .marquee-fade-left,
 .marquee-fade-right {
     position: absolute;
     top: 0;
@@ -259,8 +229,7 @@
     background: linear-gradient(to left, var(--bg-main), transparent);
 }
 
-/* --- Trust Note --- */
-.trust-footer-note {
+ .trust-footer-note {
     text-align: center;
     margin-top: 30px;
     font-size: 0.85rem;
@@ -273,8 +242,7 @@
     width: 8px;
     height: 8px;
     background-color: #4CAF50;
-    /* Success Green */
-    border-radius: 50%;
+     border-radius: 50%;
     margin-right: 10px;
     box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
     animation: pulseGreen 2s infinite;
@@ -297,8 +265,7 @@
     }
 }
 
-/* --- 768px Media Query --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .trust-marquee-section {
         padding: 40px 0;
     }
@@ -311,13 +278,11 @@
     .marquee-fade-left,
     .marquee-fade-right {
         width: 60px;
-        /* Smaller fades for mobile */
-    }
+     }
 
     .marquee-content {
         animation-duration: 15s;
-        /* Faster for smaller screens */
-    }
+     }
 }
 
 
@@ -342,8 +307,7 @@
     position: relative;
 }
 
-/* --- Visual Side --- */
-.newsletter-image {
+ .newsletter-image {
     position: relative;
     height: 100%;
     min-height: 500px;
@@ -374,8 +338,7 @@
     backdrop-filter: blur(5px);
 }
 
-/* --- Form Side --- */
-.newsletter-content {
+ .newsletter-content {
     padding: 80px;
 }
 
@@ -386,8 +349,7 @@
 
 .align-left .section-title span {
     color: var(--accent-callout);
-    /* Red #e53935 */
-    font-style: italic;
+     font-style: italic;
 }
 
 .premium-form .input-group {
@@ -436,8 +398,7 @@
     cursor: pointer;
 }
 
-/* --- 768px Responsive Logic --- */
-@media (max-width: 992px) {
+ @media (max-width: 992px) {
     .newsletter-content {
         padding: 40px;
     }
@@ -450,8 +411,7 @@
 
     .newsletter-wrapper {
         grid-template-columns: 1fr;
-        /* Stacked for mobile */
-    }
+     }
 
     .newsletter-image {
         min-height: 300px;
@@ -505,8 +465,7 @@
     gap: 25px;
 }
 
-/* --- Masonry Logic --- */
-.gallery-item.wide {
+ .gallery-item.wide {
     grid-column: span 2;
     height: 500px;
 }
@@ -527,8 +486,7 @@
     transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* --- Glassmorphism Reveal --- */
-.g-overlay {
+ .g-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -549,15 +507,13 @@
     transform: scale(1.1);
 }
 
-/* --- Typography --- */
-.g-cat {
+ .g-cat {
     display: block;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--accent-callout);
-    /* Red #e53935 */
-    margin-bottom: 10px;
+     margin-bottom: 10px;
 }
 
 .g-overlay h3 {
@@ -576,8 +532,7 @@
     padding-bottom: 5px;
 }
 
-/* --- 768px Responsive Logic --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .arrivals-gallery-section {
         padding: 60px 0;
     }
@@ -599,15 +554,13 @@
     .gallery-item,
     .gallery-item.wide {
         flex: 0 0 85%;
-        /* Shows a peek of the next card */
-        height: 450px;
+         height: 450px;
         scroll-snap-align: center;
     }
 
     .g-overlay {
         transform: translateY(0);
-        /* Always visible for touch */
-        padding: 20px;
+         padding: 20px;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     }
 
@@ -641,8 +594,7 @@
     object-fit: cover;
 }
 
-/* --- The Pulsing Hotspot --- */
-.hotspot {
+ .hotspot {
     position: absolute;
     z-index: 5;
 }
@@ -653,8 +605,7 @@
     background-color: #fff;
     border-radius: 50%;
     border: 3px solid var(--accent-callout);
-    /* Your Red #e53935 */
-    cursor: pointer;
+     cursor: pointer;
     box-shadow: 0 0 15px rgba(229, 57, 53, 0.6);
     animation: pulseRed 2s infinite;
 }
@@ -676,8 +627,7 @@
     }
 }
 
-/* --- Floating Product Card --- */
-.hotspot-card {
+ .hotspot-card {
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -714,19 +664,16 @@
     font-weight: 700;
 }
 
-/* Hover Reveal */
-.hotspot:hover .hotspot-card {
+ .hotspot:hover .hotspot-card {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
     pointer-events: auto;
 }
 
-/* --- 768px Responsive Logic --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .look-main {
         aspect-ratio: 4 / 5;
-        /* More vertical for mobile portrait */
-    }
+     }
 
     .hotspot-card {
         width: 160px;
@@ -738,8 +685,7 @@
         font-size: 0.75rem;
     }
 
-    /* On mobile, make the dots slightly larger for easier tapping */
-    .hotspot-dot {
+     .hotspot-dot {
         width: 25px;
         height: 25px;
     }
@@ -762,11 +708,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     perspective: 1000px;
-    /* Essential for the tilt effect */
-}
+ }
 
-/* --- The Social Card --- */
-.social-card {
+ .social-card {
     position: relative;
     aspect-ratio: 1 / 1;
     overflow: hidden;
@@ -785,8 +729,7 @@
     transition: transform 1.2s ease;
 }
 
-/* --- Hover: 3D Tilt & Color Restore --- */
-.social-card:hover {
+ .social-card:hover {
     transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     z-index: 5;
@@ -797,8 +740,7 @@
     transform: scale(1.1);
 }
 
-/* --- Glassmorphism Overlay --- */
-.social-overlay {
+ .social-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.3);
@@ -825,8 +767,7 @@
 .social-icon {
     margin-top: 10px;
     background: var(--accent-callout);
-    /* Your Red #e53935 */
-    color: #fff;
+     color: #fff;
     width: 35px;
     height: 35px;
     display: flex;
@@ -837,8 +778,7 @@
     font-weight: 900;
 }
 
-/* --- 768px Responsive Logic (Mobile Swipe) --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .social-gallery-section {
         padding: 60px 0;
     }
@@ -862,13 +802,11 @@
     .social-card {
         flex: 0 0 220px;
         transform: none !important;
-        /* Disable tilt for touch */
-    }
+     }
 
     .social-overlay {
         opacity: 1;
-        /* Always show handle on mobile */
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+         background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
         justify-content: flex-end;
         padding: 15px;
         align-items: flex-start;
@@ -893,14 +831,12 @@
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     background: var(--bg-dark);
-    /* Your #1a1a1a */
-    border-radius: var(--border-radius);
+     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
 }
 
-/* --- Visual Background --- */
-.cinematic-bg {
+ .cinematic-bg {
     position: relative;
     overflow: hidden;
 }
@@ -922,8 +858,7 @@
     background: linear-gradient(90deg, transparent 0%, rgba(26, 26, 26, 0.8) 100%);
 }
 
-/* --- Content Side --- */
-.cinematic-content {
+ .cinematic-content {
     display: flex;
     align-items: center;
     padding: 60px;
@@ -938,8 +873,7 @@
     transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Simulate Reveal on Scroll/Hover */
-.cinematic-wrapper:hover .content-inner {
+ .cinematic-wrapper:hover .content-inner {
     opacity: 1;
     transform: translateX(0);
 }
@@ -950,8 +884,7 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     color: var(--accent-callout);
-    /* Red #e53935 */
-    margin-bottom: 20px;
+     margin-bottom: 20px;
 }
 
 .c-title {
@@ -1000,8 +933,7 @@
     transform: translateX(10px);
 }
 
-/* --- 768px Responsive Logic --- */
-@media (max-width: 992px) {
+ @media (max-width: 992px) {
     .cinematic-content {
         padding: 40px;
     }
@@ -1014,8 +946,7 @@
 @media (max-width: 768px) {
     .cinematic-wrapper {
         grid-template-columns: 1fr;
-        /* Stacked */
-        height: auto;
+         height: auto;
     }
 
     .cinematic-bg {

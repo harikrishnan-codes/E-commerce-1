@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="root.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside>
+            <div class="aside-brand">
+                <div class="brand-inner">
+                    <h3>Admin<span>Core</span></h3>
+                    <div class="system-tag">v1.0</div>
+                </div>
+            </div>
+
+            <nav class="aside-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#" data-target="dashboard-view">
+                            <i class="material-icons">dashboard</i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="products-view">
+                            <i class="material-icons">inventory_2</i> Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="orders-view">
+                            <i class="material-icons">shopping_cart</i> Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="customers-view">
+                            <i class="material-icons">group</i> Customers
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- MAIN -->
+        <main>
+            <!-- MOBILE TOP BAR -->
+            <div class="mobile-top-bar">
+                <h3 class="mobile-brand">Admin<span>Core</span></h3>
+                <button class="menu-btn" id="menu-toggle">
+                    <i class="material-icons">menu</i>
+                </button>
+            </div>
+
+            <div class="topbar">
+
+                <div class="topbar-left">
+                    <h3>Admin Dashboard</h3>
+                </div>
+
+                <div class="topbar-center">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search threats, logs..." />
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="topbar-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge"><span class="material-icons">notifications</span>3</span>
+                    </div>
+
+                    <div class="profile-box">
+                        <div class="profile-img">A</div>
+                        <div class="profile-info">
+                            <p>Admin</p>
+                            <span>Super Admin</span>
+                        </div>
+                    </div>
+
+
+                    <a href="index.html" class="topbar-icon">Exit</a>
+
+                </div>
+            </div>
+
+            <section id="dashboard-view" class="main-content active-section">
+                <div class="header-row">
+                    <h1>System <span>Overview</span></h1>
+                    <button class="btn-add-red">Download Report</button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="material-icons">payments</i></div>
+                        <div class="stat-details">
+                            <p>Total Revenue</p>
+                            <h3>$24,500</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="material-icons">shopping_bag</i></div>
+                        <div class="stat-details">
+                            <p>Orders</p>
+                            <h3>452</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="material-icons">trending_up</i></div>
+                        <div class="stat-details">
+                            <p>Growth</p>
+                            <h3>+12.5%</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="products-view" class="main-content active-section">
+                <div class="header-row">
+                    <h1>Product <span>Inventory</span></h1>
+                    <button class="btn-add-red">+ Add Product</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#001</td>
+                                <td>Premium Leather Jacket</td>
+                                <td>Apparel</td>
+                                <td>$120.00</td>
+                                <td>45</td>
+                                <td><span class="status-tag instock">In Stock</span></td>
+                                <td><i class="material-icons action-icon">edit</i></td>
+                            </tr>
+                            <tr>
+                                <td>#002</td>
+                                <td>Silk Scarf</td>
+                                <td>Accessories</td>
+                                <td>$45.00</td>
+                                <td>0</td>
+                                <td><span class="status-tag outstock">Out of Stock</span></td>
+                                <td><i class="material-icons action-icon">edit</i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+
+
+
+            <section id="orders-view" class="main-content">
+                <div class="header-row">
+                    <h1>Recent <span>Orders</span></h1>
+                    <div class="order-actions">
+                        <button class="btn-secondary small-btn">
+                            <i class="material-icons">filter_list</i> Filter
+                        </button>
+                        <button class="btn-add-red">Export CSV</button>
+                    </div>
+                </div>
+
+                <div class="order-summary-row">
+                    <div class="mini-card">
+                        <span class="label">Pending</span>
+                        <span class="count">12</span>
+                    </div>
+                    <div class="mini-card">
+                        <span class="label">Processing</span>
+                        <span class="count">08</span>
+                    </div>
+                    <div class="mini-card">
+                        <span class="label">Completed</span>
+                        <span class="count">142</span>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Payment</th>
+                                <th>Status</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-7742</td>
+                                <td><strong>Sarah Johnson</strong><br><small>sarah.j@email.com</small></td>
+                                <td>Oct 24, 2023</td>
+                                <td>$299.00</td>
+                                <td>Credit Card</td>
+                                <td><span class="status-tag shipped">Shipped</span></td>
+                                <td><button class="view-btn"><i class="material-icons">visibility</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7741</td>
+                                <td><strong>Michael Chen</strong><br><small>m.chen@web.com</small></td>
+                                <td>Oct 23, 2023</td>
+                                <td>$85.50</td>
+                                <td>PayPal</td>
+                                <td><span class="status-tag pending">Pending</span></td>
+                                <td><button class="view-btn"><i class="material-icons">visibility</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7740</td>
+                                <td><strong>Emma Wilson</strong><br><small>emma.w@service.org</small></td>
+                                <td>Oct 22, 2023</td>
+                                <td>$1,240.00</td>
+                                <td>Bank Transfer</td>
+                                <td><span class="status-tag cancelled">Cancelled</span></td>
+                                <td><button class="view-btn"><i class="material-icons">visibility</i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+
+
+
+            <section id="customers-view" class="main-content">
+                <div class="header-row">
+                    <h1>Customer <span>Directory</span></h1>
+                    <div class="header-actions">
+                        <button class="btn-secondary small-btn">
+                            <i class="material-icons">person_add</i> Invite User
+                        </button>
+                        <button class="btn-add-red">Message All</button>
+                    </div>
+                </div>
+
+                <div class="customer-highlights">
+                    <div class="highlight-card">
+                        <div class="h-profile">JD</div>
+                        <div class="h-info">
+                            <h4>John Doe</h4>
+                            <p>Top Buyer • 42 Orders</p>
+                        </div>
+                        <span class="h-tag">VIP</span>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="h-profile" style="background: #4a90e2;">AS</div>
+                        <div class="h-info">
+                            <h4>Anna Smith</h4>
+                            <p>Newest • 1 Order</p>
+                        </div>
+                        <span class="h-tag" style="color: #4a90e2;">NEW</span>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Location</th>
+                                <th>Spent</th>
+                                <th>Joined</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="user-cell">
+                                    <div class="mini-avatar">RB</div>
+                                    <span>Robert Brown</span>
+                                </td>
+                                <td>robert.b@example.com</td>
+                                <td>New York, USA</td>
+                                <td>$4,250.00</td>
+                                <td>Jan 12, 2024</td>
+                                <td><span class="status-tag active-user">Active</span></td>
+                                <td><i class="material-icons action-icon">more_vert</i></td>
+                            </tr>
+                            <tr>
+                                <td class="user-cell">
+                                    <div class="mini-avatar" style="background: #6b6b6b;">LM</div>
+                                    <span>Lisa Miller</span>
+                                </td>
+                                <td>lisa.m@webmail.com</td>
+                                <td>London, UK</td>
+                                <td>$120.50</td>
+                                <td>Feb 05, 2024</td>
+                                <td><span class="status-tag inactive-user">Inactive</span></td>
+                                <td><i class="material-icons action-icon">more_vert</i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const navLinks = document.querySelectorAll('.aside-nav a');
+            const sections = document.querySelectorAll('.main-content');
+            const aside = document.querySelector('aside');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            // Overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'sidebar-overlay';
+            document.body.appendChild(overlay);
+
+            // Toggle sidebar
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    aside.classList.add('mobile-active');
+                    overlay.classList.add('visible');
+                });
+            }
+
+            // Close sidebar
+            overlay.addEventListener('click', () => {
+                aside.classList.remove('mobile-active');
+                overlay.classList.remove('visible');
+            });
+
+            // Navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+
+                        // Hide all
+                        sections.forEach(section => {
+                            section.style.display = "none";
+                        });
+
+                        // Show clicked
+                        targetSection.style.display = "block";
+
+                        // Active menu
+                        navLinks.forEach(nav => nav.parentElement.classList.remove('active'));
+                        this.parentElement.classList.add('active');
+
+                        // Close sidebar (mobile)
+                        if (window.innerWidth <= 992) {
+                            aside.classList.remove('mobile-active');
+                            overlay.classList.remove('visible');
+                        }
+                    }
+                });
+            });
+
+        });
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
