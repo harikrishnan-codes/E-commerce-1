@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Commerce</title>
+    <link rel="icon" href="./assets/bg remove.webp">
+
+    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="./root.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="auth-wrapper">
+
+
+
+        <div class="auth-container" id="auth-container">
+
+            <div class="auth-section" id="signup-box">
+                <h2>Create <span>Account</span></h2>
+
+
+                <form id="signup-form" onsubmit="handleSignup(event)">
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="input-group">
+                        <select id="reg-role" required>
+                            <option value="">SELECT USER ROLE</option>
+                            <option value="admin">Administrator</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group password-field">
+                        <input type="password" id="reg-pass" placeholder="Create Password" required>
+                        <i class="material-icons toggle-pass" onclick="togglePass('reg-pass')">visibility_off</i>
+                    </div>
+
+                    <div class="input-group password-field">
+                        <input type="password" id="reg-pass" placeholder="Confirm Password" required>
+                        <i class="material-icons toggle-pass" onclick="togglePass('reg-pass')">visibility_off</i>
+                    </div>
+
+
+                    <button type="submit" class="btn-add-red">Sign Up</button>
+
+                </form>
+
+                <p class="auth-switch">Already have an account? <a href="#" onclick="showAuth('login')">Login</a></p>
+            </div>
+
+
+
+
+
+
+            <div class="auth-section" id="login-box" style="display: none;">
+                <h2>Welcome <span>Back</span></h2>
+
+                <form id="login-form" onsubmit="handleLogin(event)">
+
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="input-group password-field">
+                        <input type="password" id="log-pass" placeholder="Password" required>
+                        <i class="material-icons toggle-pass" onclick="togglePass('log-pass')">visibility_off</i>
+                    </div>
+
+                    <div class="forgot-link">
+                        <a href="#" onclick="showAuth('forgot')">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-add-red">Login</button>
+
+                </form>
+
+                <p class="auth-switch">New here? <a href="#" onclick="showAuth('signup')">Create Account</a></p>
+            </div>
+
+
+
+
+
+
+            <div class="auth-section" id="forgot-box" style="display: none;">
+                <h2>Reset <span>Password</span></h2>
+                <p class="desc">Enter your email to receive a reset link.</p>
+                <form onsubmit="handleForgot(event)">
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <button type="submit" class="btn-add-red">Send Reset Link</button>
+                </form>
+                <a href="#" class="back-to-login" onclick="showAuth('login')">Back to Login</a>
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+// Toggle Password Visibility
+function togglePass(inputId) {
+    const input = document.getElementById(inputId);
+    const icon = input.nextElementSibling;
+    if (input.type === "password") {
+        input.type = "text";
+        icon.textContent = "visibility";
+    } else {
+        input.type = "password";
+        icon.textContent = "visibility_off";
+    }
+}
+
+// Switch Views
+function showAuth(view) {
+    const sections = ['signup-box', 'login-box', 'forgot-box'];
+    sections.forEach(s => document.getElementById(s).style.display = "none");
+    document.getElementById(view + '-box').style.display = "block";
+}
+
+// Handle Signup: Save role to localStorage
+function handleSignup(e) {
+    e.preventDefault();
+    const role = document.getElementById('reg-role').value;
+    
+    // Simple simulation: Save role in browser memory
+    localStorage.setItem('userRole', role);
+    
+    alert(`Signup Successful as ${role}! Now please login.`);
+    showAuth('login');
+}
+
+// Handle Login: Redirect based on saved role
+function handleLogin(e) {
+    e.preventDefault();
+    
+    // Retrieve the role we saved during signup
+    const savedRole = localStorage.getItem('userRole');
+
+    if (savedRole === 'admin') {
+        alert("Redirecting to Admin Dashboard...");
+        window.location.href = "admin.html";
+    } else if (savedRole === 'customer') {
+        alert("Redirecting to Customer Store...");
+        window.location.href = "customer.html"; // Or customer.html
+    } else {
+        alert("Account not found. Please Sign Up first.");
+        showAuth('signup');
+    }
+}
+
+function handleForgot(e) {
+    e.preventDefault();
+    window.location.href = "404.html";
+}
+
+    </script>
+
+</body>
+
+</html>
