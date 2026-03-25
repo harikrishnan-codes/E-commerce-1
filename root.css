@@ -668,7 +668,7 @@ ul {
     position: relative;
     height: 80vh; /* Large height for impact */
     min-height: 600px;
-    background-image: url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1500'); /* High-fashion background */
+    background-image: url('./assets/navigation.webp'); /* High-fashion background */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
