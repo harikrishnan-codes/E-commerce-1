@@ -516,10 +516,15 @@
      margin-bottom: 10px;
 }
 
+.g-overlay span{
+    color: var(--bg-main);
+}
+
 .g-overlay h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     font-weight: 300;
+    color: var(--bg-main);
 }
 
 .g-link {
