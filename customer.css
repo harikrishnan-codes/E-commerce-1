@@ -38,7 +38,6 @@ body {
     font-weight: 600;
 }
 
-/* --- SIDEBAR (ASIDE) --- */
 aside {
     width: 260px;
     height: 100vh;
@@ -83,7 +82,6 @@ aside {
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* Sidebar Navigation */
 .aside-nav {
     flex-grow: 1;
     display: flex;
@@ -118,7 +116,6 @@ aside {
     box-shadow: 0 10px 20px rgba(229, 57, 53, 0.2);
 }
 
-/* Sidebar Logout Button */
 .aside-nav button {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -135,7 +132,6 @@ aside {
     color: var(--bg-dark);
 }
 
-/* --- MAIN CONTENT AREA --- */
 main {
     flex-grow: 1;
     margin-left: 260px;
@@ -144,7 +140,6 @@ main {
     flex-direction: column;
 }
 
-/* TOPBAR */
 .topbar {
     height: 80px;
     background: #fff;
@@ -209,7 +204,6 @@ main {
     justify-content: center;
 }
 
-/* PROFILE BOX */
 .profile-box {
     display: flex;
     align-items: center;
@@ -242,9 +236,7 @@ main {
     color: var(--text-muted);
 }
 
-/* --- THE NAVIGATION SWITCH LOGIC --- */
 
-/* 1. All sections visible initially */
 .main-content {
     display: block;
     padding: 40px;
@@ -252,13 +244,10 @@ main {
     animation: fadeIn 0.6s ease forwards;
 }
 
-/* 2. When ANY sidebar link is clicked (has .active) */
-/* This hides every section EXCEPT the one with .active-section */
 .dashboard:has(.aside-nav li.active:not(:first-child)) .main-content {
     display: none;
 }
 
-/* 3. Force the selected one to show */
 .main-content.active-section {
     display: block !important;
 }
@@ -275,7 +264,6 @@ main {
     }
 }
 
-/* --- MOBILE & RESPONSIVE --- */
 .mobile-top-bar {
     display: none;
 }
@@ -305,10 +293,6 @@ main {
     main {
         margin-left: 0;
         width: 100%;
-    }
-
-    .topbar {
-        /* display: none; */
     }
 
     .mobile-top-bar {
@@ -356,21 +340,16 @@ main {
 
 
 
-/* 1. All sections visible by default */
 .main-content {
     display: block;
     padding: 40px;
     border-bottom: 1px solid var(--border-thin);
 }
 
-/* 2. THE SWITCH: If the Sidebar contains an 'active' class, 
-   it means the user has clicked. NOW we hide everything. */
 .dashboard:has(.aside-nav li.active) .main-content {
     display: none;
 }
 
-/* 3. SHOW ONLY THE SELECTED ONE: 
-   This forces the clicked section to stay visible. */
 .dashboard .main-content.active-section {
     display: block !important;
 }
@@ -383,7 +362,6 @@ main {
 
 
 
-/* Dashboard Section Styling */
 .dash-header {
     display: flex;
     justify-content: space-between;
@@ -418,7 +396,6 @@ main {
     border: 1px solid var(--border-thin);
 }
 
-/* Stats Cards Grid */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -433,7 +410,7 @@ main {
     display: flex;
     align-items: center;
     gap: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
     transition: var(--transition);
     border: 1px solid transparent;
 }
@@ -452,12 +429,24 @@ main {
     justify-content: center;
 }
 
-.stat-icon i { font-size: 28px; }
+.stat-icon i {
+    font-size: 28px;
+}
 
-/* Icon Colors using Root Palette */
-.red-bg { background: rgba(229, 57, 53, 0.1); color: var(--accent-callout); }
-.black-bg { background: var(--bg-dark); color: #fff; }
-.outline { border: 2px solid var(--border-thin); color: var(--text-main); }
+.red-bg {
+    background: rgba(229, 57, 53, 0.1);
+    color: var(--accent-callout);
+}
+
+.black-bg {
+    background: var(--bg-dark);
+    color: #fff;
+}
+
+.outline {
+    border: 2px solid var(--border-thin);
+    color: var(--text-main);
+}
 
 .stat-details h3 {
     font-size: 1.5rem;
@@ -471,10 +460,15 @@ main {
     margin-top: 5px;
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .dash-header { flex-direction: column; gap: 20px; }
-    .stats-grid { grid-template-columns: 1fr; }
+    .dash-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -485,7 +479,6 @@ main {
 
 
 
-/* Section Header Layout */
 .section-header-flex {
     display: flex;
     justify-content: space-between;
@@ -494,11 +487,10 @@ main {
 }
 
 .title-group h1 span {
-    color: var(--accent-callout); /* Red #e53935 */
+    color: var(--accent-callout);
     font-weight: 300;
 }
 
-/* Buttons */
 .btn-outline {
     background: transparent;
     border: 1px solid var(--border-thin);
@@ -518,7 +510,6 @@ main {
     color: var(--accent-callout);
 }
 
-/* Table Container with Horizontal Scroll */
 .table-container {
     background: #fff;
     border-radius: var(--border-radius);
@@ -530,7 +521,7 @@ main {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    min-width: 800px; /* Forces scroll on small mobile */
+    min-width: 800px;
 }
 
 .premium-table th {
@@ -550,7 +541,6 @@ main {
     font-size: 0.9rem;
 }
 
-/* Product Cell with Image */
 .product-cell {
     display: flex;
     align-items: center;
@@ -569,7 +559,6 @@ main {
     font-weight: 800;
 }
 
-/* Status Badges */
 .status-badge {
     padding: 6px 12px;
     border-radius: 50px;
@@ -578,11 +567,21 @@ main {
     text-transform: uppercase;
 }
 
-.delivered { background: #e8f5e9; color: #2e7d32; }
-.pending { background: #fff3e0; color: #ef6c00; }
-.canceled { background: #ffebee; color: var(--accent-callout); }
+.delivered {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
 
-/* View Button */
+.pending {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+.canceled {
+    background: #ffebee;
+    color: var(--accent-callout);
+}
+
 .view-btn {
     background: var(--bg-dark);
     color: #fff;
@@ -598,7 +597,6 @@ main {
     background: var(--accent-callout);
 }
 
-/* --- Responsive Table Fix --- */
 @media (max-width: 768px) {
     .section-header-flex {
         flex-direction: column;
@@ -613,7 +611,6 @@ main {
 
 
 
-/* Wishlist Grid Layout */
 .wishlist-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -631,11 +628,10 @@ main {
 
 .wishlist-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
     border-color: var(--accent-callout);
 }
 
-/* Image Container */
 .wish-img-container {
     position: relative;
     height: 250px;
@@ -654,7 +650,6 @@ main {
     transform: scale(1.1);
 }
 
-/* Quick Actions on Image */
 .remove-wish {
     position: absolute;
     top: 15px;
@@ -669,7 +664,7 @@ main {
     justify-content: center;
     cursor: pointer;
     color: var(--text-muted);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
 }
 
@@ -692,10 +687,9 @@ main {
 }
 
 .stock-tag.out-of-stock {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
 }
 
-/* Wishlist Details */
 .wish-details {
     padding: 20px;
 }
@@ -713,7 +707,6 @@ main {
     margin-bottom: 20px;
 }
 
-/* Add to Cart Button */
 .add-cart-btn {
     width: 100%;
     padding: 12px;
@@ -755,7 +748,6 @@ main {
     background: var(--accent-callout);
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 576px) {
     .wishlist-grid {
         grid-template-columns: 1fr;
@@ -769,7 +761,6 @@ main {
 
 
 
-/* Profile Layout */
 .profile-container {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -777,7 +768,6 @@ main {
     margin-top: 20px;
 }
 
-/* Aside: Avatar Styling */
 .profile-aside {
     background: #fff;
     padding: 40px 20px;
@@ -806,7 +796,7 @@ main {
     font-size: 3rem;
     font-weight: 900;
     border: 4px solid #fff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .edit-avatar-btn {
@@ -823,13 +813,23 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.user-meta h2 { font-size: 1.2rem; margin-bottom: 5px; }
-.user-meta p { color: var(--text-muted); font-size: 0.85rem; }
+.user-meta h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
 
-.account-badges { margin-top: 20px; }
+.user-meta p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.account-badges {
+    margin-top: 20px;
+}
+
 .badge-item {
     font-size: 0.7rem;
     font-weight: 800;
@@ -843,7 +843,6 @@ main {
     gap: 5px;
 }
 
-/* Main Form Styling */
 .profile-main {
     background: #fff;
     padding: 40px;
@@ -857,7 +856,10 @@ main {
     gap: 20px;
 }
 
-.input-group { margin-bottom: 25px; }
+.input-group {
+    margin-bottom: 25px;
+}
+
 .input-group label {
     display: block;
     font-size: 0.85rem;
@@ -880,7 +882,10 @@ main {
     box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
 }
 
-.input-group small { color: var(--text-muted); font-size: 0.75rem; }
+.input-group small {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
 
 .form-divider {
     height: 1px;
@@ -901,14 +906,42 @@ main {
     margin-top: 20px;
 }
 
-.btn-black { background: var(--bg-dark); color: #fff; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-weight: 700; transition: 0.3s; }
-.btn-red { background: var(--accent-callout); color: #fff; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-weight: 700; transition: 0.3s; }
+.btn-black {
+    background: var(--bg-dark);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+}
 
-.btn-red:hover { background: var(--bg-dark); }
-.btn-black:hover { background: var(--accent-callout); }
+.btn-red {
+    background: var(--accent-callout);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+}
 
-/* --- Responsive Adjustments --- */
+.btn-red:hover {
+    background: var(--bg-dark);
+}
+
+.btn-black:hover {
+    background: var(--accent-callout);
+}
+
 @media (max-width: 992px) {
-    .profile-container { grid-template-columns: 1fr; }
-    .form-grid { grid-template-columns: 1fr; }
+    .profile-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }

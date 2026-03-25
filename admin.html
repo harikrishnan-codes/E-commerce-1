@@ -220,7 +220,8 @@
                                 <td>$299.00</td>
                                 <td>Credit Card</td>
                                 <td><span class="status-tag shipped">Shipped</span></td>
-                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i class="material-icons">visibility</i></button></td>
+                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i
+                                            class="material-icons">visibility</i></button></td>
                             </tr>
                             <tr>
                                 <td>#ORD-7741</td>
@@ -229,7 +230,8 @@
                                 <td>$85.50</td>
                                 <td>PayPal</td>
                                 <td><span class="status-tag pending">Pending</span></td>
-                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i class="material-icons">visibility</i></button></td>
+                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i
+                                            class="material-icons">visibility</i></button></td>
                             </tr>
                             <tr>
                                 <td>#ORD-7740</td>
@@ -238,7 +240,8 @@
                                 <td>$1,240.00</td>
                                 <td>Bank Transfer</td>
                                 <td><span class="status-tag cancelled">Cancelled</span></td>
-                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i class="material-icons">visibility</i></button></td>
+                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i
+                                            class="material-icons">visibility</i></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -329,6 +332,9 @@
     <script src="script.js"></script>
 
     <script>
+
+
+
         document.addEventListener('DOMContentLoaded', () => {
 
             const navLinks = document.querySelectorAll('.aside-nav a');
@@ -336,12 +342,10 @@
             const aside = document.querySelector('aside');
             const menuToggle = document.getElementById('menu-toggle');
 
-            // Overlay
             const overlay = document.createElement('div');
             overlay.className = 'sidebar-overlay';
             document.body.appendChild(overlay);
 
-            // Toggle sidebar
             if (menuToggle) {
                 menuToggle.addEventListener('click', () => {
                     aside.classList.add('mobile-active');
@@ -349,13 +353,11 @@
                 });
             }
 
-            // Close sidebar
             overlay.addEventListener('click', () => {
                 aside.classList.remove('mobile-active');
                 overlay.classList.remove('visible');
             });
 
-            // Navigation
             navLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -365,19 +367,15 @@
 
                     if (targetSection) {
 
-                        // Hide all
                         sections.forEach(section => {
                             section.style.display = "none";
                         });
 
-                        // Show clicked
                         targetSection.style.display = "block";
 
-                        // Active menu
                         navLinks.forEach(nav => nav.parentElement.classList.remove('active'));
                         this.parentElement.classList.add('active');
 
-                        // Close sidebar (mobile)
                         if (window.innerWidth <= 992) {
                             aside.classList.remove('mobile-active');
                             overlay.classList.remove('visible');
@@ -397,28 +395,21 @@
 
 
         document.addEventListener('DOMContentLoaded', () => {
-    // 1. Get the data from the login session
-    const sessionData = localStorage.getItem("loggedInUser");
+            const sessionData = localStorage.getItem("loggedInUser");
 
-    if (sessionData) {
-        const user = JSON.parse(sessionData);
+            if (sessionData) {
+                const user = JSON.parse(sessionData);
 
-        // 2. Target the <p> tag by its ID
-        const adminEmailDisplay = document.getElementById("profile-name");
+                const adminEmailDisplay = document.getElementById("profile-name");
 
-        if (adminEmailDisplay) {
-            // 3. Inject the email into the tag
-            adminEmailDisplay.textContent = user.email;
-            console.log("Email injected: " + user.email);
-        } else {
-            console.error("Error: Could not find element with id 'profile-name'");
-        }
-    }
-});
-
-
-
-
+                if (adminEmailDisplay) {
+                    adminEmailDisplay.textContent = user.email;
+                    console.log("Email injected: " + user.email);
+                } else {
+                    console.error("Error: Could not find element with id 'profile-name'");
+                }
+            }
+        });
 
 
 

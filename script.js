@@ -1,14 +1,30 @@
-const slides = document.querySelectorAll(".hero-slide");
-let index = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.hero-slide');
+    const pagers = document.querySelectorAll('.pager');
+    let currentIndex = 0;
+    const intervalTime = 5000;  
 
-function showSlide() {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
+    function switchSlide(index) {
+         slides.forEach(s => s.classList.remove('active'));
+        pagers.forEach(p => p.classList.remove('active'));
 
-    index++;
-    if (index >= slides.length) {
-        index = 0;
+         slides[index].classList.add('active');
+        pagers[index].classList.add('active');
     }
-}
 
- setInterval(showSlide, 3000);
+    function autoPlay() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        switchSlide(currentIndex);
+    }
+
+    let slideTimer = setInterval(autoPlay, intervalTime);
+
+     pagers.forEach((pager, idx) => {
+        pager.addEventListener('click', () => {
+            clearInterval(slideTimer);  
+            currentIndex = idx;
+            switchSlide(currentIndex);
+            slideTimer = setInterval(autoPlay, intervalTime);  
+        });
+    });
+});

@@ -11,9 +11,7 @@
     font-weight: 600;
 }
 
-/* ======================
-   SIDEBAR
-====================== */
+
 aside {
     width: 250px;
     height: 100vh;
@@ -26,7 +24,6 @@ aside {
     z-index: 1000;
 }
 
-/* BRAND */
 .aside-brand {
     padding: 25px 0;
     margin-bottom: 35px;
@@ -57,7 +54,6 @@ aside {
     border-radius: var(--border-radius);
 }
 
-/* NAV */
 .aside-nav ul {
     list-style: none;
 }
@@ -88,7 +84,6 @@ aside {
     font-size: 20px;
 }
 
-/* USER BOX */
 .aside-user-box {
     margin-top: auto;
     padding-top: 20px;
@@ -117,9 +112,7 @@ aside {
     color: var(--accent-callout);
 }
 
-/* ======================
-   MAIN
-====================== */
+
 main {
     margin-left: 250px;
     width: calc(100% - 250px);
@@ -127,16 +120,12 @@ main {
     background-color: var(--bg-main);
 }
 
-/* CONTENT SWITCH */
 .main-content {
     display: block;
     padding: 40px;
     animation: fadeIn 0.4s ease;
 }
 
-/* .main-content.active-section {
-    display: block;
-} */
 
 @keyframes fadeIn {
     from {
@@ -150,7 +139,6 @@ main {
     }
 }
 
-/* HEADER */
 .header-row {
     display: flex;
     justify-content: space-between;
@@ -168,7 +156,6 @@ main {
     color: var(--accent-callout);
 }
 
-/* BUTTON */
 .btn-add-red {
     background: var(--accent-callout);
     color: var(--text-light);
@@ -183,14 +170,10 @@ main {
     background: var(--action-primary);
 }
 
-/* ======================
-   MOBILE TOP BAR
-====================== */
 .mobile-top-bar {
     display: none;
 }
 
-/* OVERLAY */
 .sidebar-overlay {
     position: fixed;
     inset: 0;
@@ -203,9 +186,7 @@ main {
     display: block;
 }
 
-/* ======================
-   RESPONSIVE (992px)
-====================== */
+
 @media (max-width: 992px) {
 
     aside {
@@ -257,7 +238,6 @@ main {
 
 
 
-/* ===== TOPBAR ===== */
 .topbar {
     position: sticky;
     top: 0;
@@ -273,21 +253,18 @@ main {
     box-shadow: var(--shadow-sm);
 }
 
-/* ===== LEFT ===== */
 .topbar-left h3 {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-main);
 }
 
-/* ===== CENTER ===== */
 .topbar-center {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-/* SEARCH BOX */
 .search-box {
     display: flex;
     align-items: center;
@@ -316,7 +293,6 @@ main {
     color: var(--text-main);
 }
 
-/* ===== RIGHT ===== */
 .topbar-right {
     display: flex;
     align-items: center;
@@ -324,7 +300,6 @@ main {
     padding: 0 50px;
 }
 
-/* ICON */
 .topbar-icon {
     position: relative;
     cursor: pointer;
@@ -344,7 +319,6 @@ main {
     text-decoration: none;
 }
 
-/* BADGE */
 .badge {
     position: absolute;
     top: -6px;
@@ -358,7 +332,6 @@ main {
     border-radius: 50%;
 }
 
-/* ===== PROFILE ===== */
 .profile-box {
     display: flex;
     align-items: center;
@@ -403,7 +376,6 @@ main {
         background-color: var(--accent-callout);
     }
 
-    /* LEFT */
     .topbar-left {
         width: 100%;
     }
@@ -412,7 +384,6 @@ main {
         font-size: 1rem;
     }
 
-    /* CENTER */
     .topbar-center {
         width: 100%;
         justify-content: flex-start;
@@ -423,14 +394,12 @@ main {
         width: 100%;
     }
 
-    /* RIGHT */
     .topbar-right {
         width: 100%;
         justify-content: space-between;
         gap: 10px;
     }
 
-    /* PROFILE SMALL */
     .profile-img {
         width: 28px;
         height: 28px;
@@ -448,7 +417,6 @@ main {
 
 
 
-/* Stats Grid Layout */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -489,7 +457,6 @@ main {
     font-size: 1.4rem;
 }
 
-/* Admin Table Styling */
 .table-container {
     background: var(--bg-card);
     border-radius: var(--border-radius);
@@ -545,7 +512,6 @@ main {
     color: var(--accent-callout);
 }
 
-/* Topbar Exit Button Fix */
 .topbar-exit-btn {
     background: var(--bg-main);
     color: var(--accent-callout) !important;
@@ -569,13 +535,11 @@ main {
 
 
 
-/* Order Header Actions */
 .order-actions {
     display: flex;
     gap: 10px;
 }
 
-/* Order Summary Row */
 .order-summary-row {
     display: flex;
     gap: 20px;
@@ -603,10 +567,8 @@ main {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent-callout);
-    /* Root Red */
 }
 
-/* Status Tags Refinement */
 .status-tag.shipped {
     background: #e3f2fd;
     color: #1976d2;
@@ -622,7 +584,6 @@ main {
     color: #757575;
 }
 
-/* Table Button */
 .view-btn {
     background: none;
     border: none;
@@ -636,7 +597,6 @@ main {
     transform: scale(1.1);
 }
 
-/* Responsive fix for mini-cards */
 @media (max-width: 768px) {
     .order-summary-row {
         flex-wrap: wrap;
@@ -657,7 +617,6 @@ main {
 
 
 
-/* Customer Highlight Cards */
 .customer-highlights {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -710,7 +669,6 @@ main {
     letter-spacing: 1px;
 }
 
-/* User Cell Layout */
 .user-cell {
     display: flex;
     align-items: center;
@@ -729,7 +687,6 @@ main {
     font-weight: bold;
 }
 
-/* Customer Statuses */
 .status-tag.active-user {
     background: #e8f5e9;
     color: #2e7d32;
@@ -740,7 +697,6 @@ main {
     color: #757575;
 }
 
-/* Action Icon hover */
 .action-icon {
     cursor: pointer;
     padding: 5px;

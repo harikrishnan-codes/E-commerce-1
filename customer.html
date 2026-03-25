@@ -16,7 +16,7 @@
 
     <section class="dashboard">
 
-         <aside>
+        <aside>
             <div class="aside-brand">
                 <div class="brand-inner">
                     <h3>User<span>Core</span></h3>
@@ -55,10 +55,10 @@
             </nav>
         </aside>
 
-        <!-- MAIN -->
         <main>
 
-            <!-- MOBILE TOP BAR -->
+            <!-- hamburger -->
+
             <div class="mobile-top-bar">
                 <h3 class="mobile-brand">User<span>Core</span></h3>
                 <button class="menu-btn" id="menu-toggle">
@@ -67,6 +67,7 @@
             </div>
 
             <!-- TOPBAR -->
+
             <div class="topbar">
 
                 <div class="topbar-left">
@@ -362,13 +363,15 @@
     </section>
 
     <script>
+
+
+
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('.aside-nav a');
             const sections = document.querySelectorAll('.main-content');
             const aside = document.querySelector('aside');
             const menuToggle = document.getElementById('menu-toggle');
 
-            // Sidebar Overlay Logic
             const overlay = document.createElement('div');
             overlay.className = 'sidebar-overlay';
             document.body.appendChild(overlay);
@@ -385,7 +388,6 @@
                 overlay.classList.remove('visible');
             });
 
-            // Navigation Logic
             navLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -401,19 +403,15 @@
                 });
             });
 
-            // ROLE BASED DATA LOADING
             const userData = localStorage.getItem("loggedInUser");
             if (userData) {
                 const user = JSON.parse(userData);
 
-                // Injecting the Email into your requested tag
                 document.getElementById("profile-name").textContent = user.email;
 
-                // Welcome Message
                 const welcome = document.getElementById("user-display-name");
                 if (welcome) welcome.textContent = user.email.split('@')[0];
 
-                // Avatars
                 const letter = user.email.charAt(0).toUpperCase();
                 document.getElementById("profile-letter").textContent = letter;
                 if (document.getElementById("large-profile-letter")) {
@@ -438,23 +436,17 @@
 
             if (profileForm) {
                 profileForm.addEventListener('submit', function (e) {
-                    // 1. Prevent the default refresh so we can control the flow
                     e.preventDefault();
 
-                    // 2. Check if the form is valid (HTML5 validation)
                     if (this.checkValidity()) {
-                        // If VALID: show success and redirect
                         alert("All details are valid! Redirecting...");
                         window.location.href = "404.html";
                     } else {
-                        // If INVALID: The browser usually shows its own tooltip, 
-                        // but we can add a custom alert just in case.
                         alert("Error: Please fill in all required details correctly.");
                     }
                 });
             }
 
-            // Auto-fill the email from your login session
             const userData = localStorage.getItem("loggedInUser");
             if (userData) {
                 const user = JSON.parse(userData);
