@@ -2,6 +2,15 @@
     display: flex;
 }
 
+#display-admin-email {
+    background: rgba(139, 0, 0, 0.1);
+    color: var(--accent-callout);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
 /* ======================
    SIDEBAR
 ====================== */

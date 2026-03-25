@@ -29,6 +29,15 @@ body {
     min-height: 100vh;
 }
 
+#display-admin-email {
+    background: rgba(139, 0, 0, 0.1);
+    color: var(--accent-callout);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
 /* --- SIDEBAR (ASIDE) --- */
 aside {
     width: 260px;

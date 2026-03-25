@@ -84,8 +84,7 @@
                     <div class="profile-box">
                         <div class="profile-img">A</div>
                         <div class="profile-info">
-                            <p>Admin</p>
-                            <span>Super Admin</span>
+                            <p id="profile-name">Admin</p> <span>Super Admin</span>
                         </div>
                     </div>
 
@@ -98,7 +97,7 @@
             <section id="dashboard-view" class="main-content active-section">
                 <div class="header-row">
                     <h1>System <span>Overview</span></h1>
-                    <button class="btn-add-red">Download Report</button>
+                    <button class="btn-add-red" onclick="window.location.href='./404.html'">Download Report</button>
                 </div>
 
                 <div class="stats-grid">
@@ -130,7 +129,7 @@
             <section id="products-view" class="main-content active-section">
                 <div class="header-row">
                     <h1>Product <span>Inventory</span></h1>
-                    <button class="btn-add-red">+ Add Product</button>
+                    <button class="btn-add-red" onclick="window.location.href='./404.html'">+ Add Product</button>
                 </div>
 
                 <div class="table-container">
@@ -178,10 +177,10 @@
                 <div class="header-row">
                     <h1>Recent <span>Orders</span></h1>
                     <div class="order-actions">
-                        <button class="btn-secondary small-btn">
+                        <button class="btn-secondary small-btn" onclick="window.location.href='./404.html'">
                             <i class="material-icons">filter_list</i> Filter
                         </button>
-                        <button class="btn-add-red">Export CSV</button>
+                        <button class="btn-add-red" onclick="window.location.href='./404.html'">Export CSV</button>
                     </div>
                 </div>
 
@@ -221,7 +220,7 @@
                                 <td>$299.00</td>
                                 <td>Credit Card</td>
                                 <td><span class="status-tag shipped">Shipped</span></td>
-                                <td><button class="view-btn"><i class="material-icons">visibility</i></button></td>
+                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i class="material-icons">visibility</i></button></td>
                             </tr>
                             <tr>
                                 <td>#ORD-7741</td>
@@ -230,7 +229,7 @@
                                 <td>$85.50</td>
                                 <td>PayPal</td>
                                 <td><span class="status-tag pending">Pending</span></td>
-                                <td><button class="view-btn"><i class="material-icons">visibility</i></button></td>
+                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i class="material-icons">visibility</i></button></td>
                             </tr>
                             <tr>
                                 <td>#ORD-7740</td>
@@ -239,7 +238,7 @@
                                 <td>$1,240.00</td>
                                 <td>Bank Transfer</td>
                                 <td><span class="status-tag cancelled">Cancelled</span></td>
-                                <td><button class="view-btn"><i class="material-icons">visibility</i></button></td>
+                                <td><button class="view-btn" onclick="window.location.href='./404.html'"><i class="material-icons">visibility</i></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -254,10 +253,10 @@
                 <div class="header-row">
                     <h1>Customer <span>Directory</span></h1>
                     <div class="header-actions">
-                        <button class="btn-secondary small-btn">
+                        <button class="btn-secondary small-btn" onclick="window.location.href='./404.html'">
                             <i class="material-icons">person_add</i> Invite User
                         </button>
-                        <button class="btn-add-red">Message All</button>
+                        <button class="btn-add-red" onclick="window.location.href='./404.html'">Message All</button>
                     </div>
                 </div>
 
@@ -388,6 +387,34 @@
             });
 
         });
+
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+    // 1. Get the data from the login session
+    const sessionData = localStorage.getItem("loggedInUser");
+
+    if (sessionData) {
+        const user = JSON.parse(sessionData);
+
+        // 2. Target the <p> tag by its ID
+        const adminEmailDisplay = document.getElementById("profile-name");
+
+        if (adminEmailDisplay) {
+            // 3. Inject the email into the tag
+            adminEmailDisplay.textContent = user.email;
+            console.log("Email injected: " + user.email);
+        } else {
+            console.error("Error: Could not find element with id 'profile-name'");
+        }
+    }
+});
 
 
 
